@@ -1,0 +1,31 @@
+{
+  "name": "backend-proj-sec-ass-social",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustav0tx/backend-proj-sec-ass-social.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gustav0tx/backend-proj-sec-ass-social/issues"
+  },
+  "homepage": "https://github.com/gustav0tx/backend-proj-sec-ass-social#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0"
+  },
+  "devDependencies": {
+    "sqlite3": "^6.0.1"
+  }
+}
