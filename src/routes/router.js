@@ -25,6 +25,12 @@ router.post('/', async (req, res) => {
         .from('atendimentos')
         .insert([registration])
 
+    if (!error) {
+        return res.status(200).json(true)
+    } else {
+        return res
+    }
+
 })
 
 router.post('/registered', verifyPassword, async (req, res) => {
