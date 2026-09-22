@@ -25,12 +25,6 @@ router.post('/', async (req, res) => {
         .from('atendimentos')
         .insert([registration])
 
-    if(!error) {
-        return res.json(true)
-    } else {
-        return res.json(error)
-    }
-
 })
 
 router.post('/registered', verifyPassword, async (req, res) => {
@@ -42,7 +36,7 @@ router.post('/registered', verifyPassword, async (req, res) => {
     if(error) {
         return res.status(400).json(error)
     } else {
-        return res.status(200).json({data: data})
+        return res.status(200).json({data: data, loged: true})
     }
 
 })
