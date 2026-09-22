@@ -25,10 +25,10 @@ router.post('/', async (req, res) => {
         .from('atendimentos')
         .insert([registration])
 
-    if (!error) {
+    if(!error) {
         return res.status(200).json(true)
     } else {
-        return res
+        return res.status(401).json(error)
     }
 
 })
