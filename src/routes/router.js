@@ -65,4 +65,19 @@ router.delete('/:id', async (req, res) => {
 
 })
 
+router.delete('/all', async (req, res) => {
+
+    const {data, error} = supabase
+        .from('atendimentos')
+        .delete()
+        .not('id', 'is', null)
+
+    if(!error) {
+        return res.status(204).json()
+    } else {
+        return res.status(500).json(error)
+    }
+
+})
+
 export default router
