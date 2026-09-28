@@ -47,6 +47,19 @@ router.post('/registered', verifyPassword, async (req, res) => {
 
 })
 
+router.delete('/all', async (req, res) => {
+
+    const {data, error} = supabase
+        .rpc('clear_table_atendimento')
+
+    if(!error) {
+        return res.status(204).json()
+    } else {
+        return res.status(500).json(error)
+    }
+
+})
+
 router.delete('/:id', async (req, res) => {
 
     const { id } = req.params
@@ -59,19 +72,6 @@ router.delete('/:id', async (req, res) => {
 
     if(!error) {
         return res.status(204).json(data[0])
-    } else {
-        return res.status(500).json(error)
-    }
-
-})
-
-router.delete('/all', async (req, res) => {
-
-    const {data, error} = supabase
-        .rpc('clear_table_atendimento')
-
-    if(!error) {
-        return res.status(204).json()
     } else {
         return res.status(500).json(error)
     }
