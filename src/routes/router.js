@@ -47,4 +47,22 @@ router.post('/registered', verifyPassword, async (req, res) => {
 
 })
 
+router.delete('/:id', async (req, res) => {
+
+    const { id } = req.params
+
+    const {data, error} = await supabase
+        .from('atendimentos')
+        .delete()
+        .eq('id', id)
+        .select()
+
+    if(!error) {
+        return res.status(204).json(data[0])
+    } else {
+        return res.status(500).json(error)
+    }
+
+})
+
 export default router
