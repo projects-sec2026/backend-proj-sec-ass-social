@@ -42,7 +42,7 @@ router.post('/registered', verifyPassword, async (req, res) => {
     if(error) {
         return res.status(400).json(error)
     } else {
-        return res.status(200).json({data: data})
+        return res.status(200).json({data: data, loged: true})
     }
 
 })
