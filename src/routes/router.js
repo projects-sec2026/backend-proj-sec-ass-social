@@ -49,9 +49,9 @@ router.post('/registered', verifyPassword, async (req, res) => {
 
 router.delete('/all', async (req, res) => {
 
-    const {data, error} = supabase
+    const {data, error} = await supabase
         .rpc('clear_table_atendimento')
-
+        
     if(!error) {
         return res.status(204).json()
     } else {
