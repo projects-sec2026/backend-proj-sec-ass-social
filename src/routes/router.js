@@ -70,7 +70,7 @@ router.delete('/all', async (req, res) => {
     const {data, error} = supabase
         .from('atendimentos')
         .delete()
-        .not('id', 'is', null)
+        .neq('id', '00000000-0000-0000-0000-000000000000')
 
     if(!error) {
         return res.status(204).json()
